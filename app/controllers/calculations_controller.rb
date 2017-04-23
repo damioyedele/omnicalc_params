@@ -9,20 +9,21 @@ class CalculationsController < ApplicationController
 
   end
 
-  def flexible_squareroot
-
-    @user_num= params["number"].to_f
-
-    @user_num_squareroot = @user_num ** 0.5
-
-    render("calculations/flexible_squareroot.html.erb")
-
-  end
 
   def square
     @user_num = params[:user_num].to_f
 
     render ("calculations/square.html.erb")
+
+  end
+
+  def squareroot
+
+    @user_num= params[:user_num].to_f
+
+    @user_num_squareroot = @user_num ** 0.5
+
+    render("calculations/squareroot.html.erb")
 
   end
 
