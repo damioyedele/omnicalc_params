@@ -10,6 +10,6 @@ Rails.application.routes.draw do
 
   get("/squareroot/results", {:controller => "calculations", :action => "squareroot"})
 
-  get("/flexible/squareroot/:number", {:controller => "calculations", :action => "squareroot"})
+  get("/flexible/square_root/:number", {:controller => "calculations", :action => "flexible_square_root_8"})
 
 end

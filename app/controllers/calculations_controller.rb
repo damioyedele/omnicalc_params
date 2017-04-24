@@ -27,4 +27,22 @@ class CalculationsController < ApplicationController
 
   end
 
+  def flexible_square_root_8
+    # Parameters: {"number"=>"8"}
+
+    @user_num= params["number"].to_f
+
+    render("calculations/flexible_square_root_8.html.erb")
+
+  end
+
+  def flexible_square_root_5
+    # Parameters: {"number"=>"8"}
+
+    @user_num= params["number"].to_f
+
+    render("calculations/flexible_square_root_5.html.erb")
+
+  end
+
 end
