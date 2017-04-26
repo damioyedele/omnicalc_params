@@ -40,15 +40,15 @@ class CalculationsController < ApplicationController
 
     def payment
 
-      @basis_points = (params[:basis_points].to_f) / 12
+      @APR = (params[:apr].to_f) / (100*100)
 
-      @number_of_years = params[:number_of_years].to_f
+      @years = params[:years].to_f
 
-      @number_of_months = @number_of_years * 12
+      @months = @years * 12
 
-      @present_value = params[:present_value].to_f
+      @principal = params[:principal].to_f
 
-      @monthly_payment = ((@basis_points * @present_value) / (1 - ((1 + @basis_points)**(-1 * @number_of_months)))).round(1)
+      @monthly_payment = ((@APR/12) * @principal) / (1 - ((1 + (@APR/12))**(-1 * @months))).round(1)
 
 
       render ("calculations/payment.html.erb")

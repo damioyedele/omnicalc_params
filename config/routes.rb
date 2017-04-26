@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get("/flexible/payment/new", {:controller => "calculations", :action => "payment_form"})
 
-  get("/flexible/payment/:basis_points/:number_of_years/:present_value", {:controller => "calculations", :action => "payment"})
+  get("/flexible/payment/:apr/:years/:principal", {:controller => "calculations", :action => "payment"})
 
   get("/payment/results", {:controller => "calculations", :action => "payment"})
 
