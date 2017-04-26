@@ -1,15 +1,33 @@
 Rails.application.routes.draw do
 
-  get("/flexible/square/:number", {:controller => "calculations", :action => "flexible_square_5"})
+  get("/flexible/square/new", {:controller => "calculations", :action => "square_form"})
 
-  get("/square/new", {:controller => "calculations", :action => "square_form"})
+  get("/flexible/square/:user_num", {:controller => "calculations", :action => "square"})
 
   get("/square/results", {:controller => "calculations", :action => "square"})
 
-  get("/squareroot/new", {:controller => "calculations", :action => "squareroot_form"})
+  get("/square/new", {:controller => "calculations", :action => "square_form"})
 
-  get("/squareroot/results", {:controller => "calculations", :action => "squareroot"})
+  get("/flexible/square_root/new", {:controller => "calculations", :action => "square_root_form"})
 
-  get("/flexible/square_root/:number", {:controller => "calculations", :action => "flexible_square_root_8"})
+  get("/flexible/square_root/:user_num", {:controller => "calculations", :action => "square_root"})
+
+  get("/square_root/results", {:controller => "calculations", :action => "square_root"})
+
+  get("/square_root/new", {:controller => "calculations", :action => "square_root_form"})
+
+  get("/flexible/payment/new", {:controller => "calculations", :action => "payment_form"})
+
+  get("/flexible/payment/:basis_points/:number_of_years/:present_value", {:controller => "calculations", :action => "payment"})
+
+  get("/payment/results", {:controller => "calculations", :action => "payment"})
+
+  get("/payment/new", {:controller => "calculations", :action => "payment_form"})
+
+  get("/flexible/random/:min/:max", {:controller => "calculations", :action => "random"})
+
+  get("/random/results", {:controller => "calculations", :action => "random"})
+
+  get("random/new", {:controller => "calculations", :action => "random_form"})
 
 end
